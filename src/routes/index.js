@@ -5,17 +5,28 @@ import { Switch, Route } from 'react-router-dom';
 // Internal Imports
 import Views from '../view';
 import PrivateRoute from './privateRoute';
+import PublicRoute from './publicRoute';
+import RegistrationRoute from './registrationRoute';
 
-const BaseRouter = () => (
+const Routes = ({ data, getCurrentUser }) => (
   <main style={{ backgroundColor: '#eee' }}>
     <Switch>
-      <Route exact path="/" component={Views.Home} />
-      <Route path="/signup" component={Views.SignUp} />
-      <Route path="/signin" component={Views.SignIn} />
-      <Route path="/signout" component={Views.SignOut} />
+      <PublicRoute exact path="/" component={Views.Home} />
+      <PublicRoute
+        path="/signup"
+        component={Views.SignUp}
+        getCurrentUser={getCurrentUser}
+      />
+      <PublicRoute
+        path="/signin"
+        component={Views.SignIn}
+        getCurrentUser={getCurrentUser}
+      />
+      <RegistrationRoute path="registration" component={Views.Registration} />
+      <PrivateRoute path="/home" component={Views.Home} />
       <Route component={Views.NoMatch} />
     </Switch>
   </main>
 );
 
-export default BaseRouter;
+export default Routes;

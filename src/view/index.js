@@ -1,12 +1,11 @@
 import Drawer from './components/drawer';
-import Home from './containers/home';
-import SignUp from './containers/signUp';
-import SignIn from './containers/signIn';
-import SignOut from './containers/signOut';
+import Home from './components/home';
+import SignUp from './components/signUp';
+import SignIn from './components/signIn';
+import SignOut from './components/signOut';
 import NoMatch from './components/statusPages/noMatch';
-import AppBar from './containers/appBar';
-import DashboardContainer from './containers/dashboard';
-
+import AppBar from './components/appBar';
+import DashboardContainer from './components/dashboard';
 
 const Dashboard = Drawer(DashboardContainer);
 
@@ -17,5 +16,5 @@ export default {
   SignOut,
   NoMatch,
   AppBar,
-  Dashboard,
+  Dashboard
 };

@@ -2,9 +2,9 @@ let api_address;
 const dev = true;
 
 if (dev) {
-  api_address = 'localhost:8000/api';
+  api_address = 'http://localhost:4000/api';
 } else {
-  api_address = 'finback-lotus.herokuapp.com/api';
+  api_address = 'https://goclutch.io/api';
 }
 
 export default api_address;

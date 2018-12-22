@@ -1,6 +1,6 @@
 import React from 'react';
-import Drawer from '../../containers/drawer';
-import SnackBar from '../../containers/snackbar';
+import Drawer from './drawer';
+import SnackBar from '../snackbar';
 
 const AppDrawer = ContentComponent => props => (
   <div style={{ display: 'flex' }}>

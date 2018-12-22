@@ -1,12 +1,12 @@
-// PrivateRoute.js
+// RegistrationRoute.js
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-const PrivateRoute = ({ component: Component, currentUser, ...rest }) => (
+const RegistrationRoute = ({ component: Component, currentUser, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      currentUser && currentUser.profile ? (
+      currentUser && !currentUser.profile ? (
         <Component currentUser={currentUser} {...props} />
       ) : (
         <Redirect
@@ -20,4 +20,4 @@ const PrivateRoute = ({ component: Component, currentUser, ...rest }) => (
   />
 );
 
-export default PrivateRoute;
+export default RegistrationRoute;
